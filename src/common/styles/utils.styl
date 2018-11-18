@@ -1,3 +1,5 @@
+@import "./constants.styl"
+
 .absolute-center {
   position absolute
   top 50%
@@ -31,6 +33,11 @@ body {
   align-items: center;
 }
 
+.item-center{
+  display: flex;
+  justify-content: center
+  }
+
 .text-title {
   font-family: "Gloria Hallelujah";
 }
@@ -49,15 +56,14 @@ body {
 }
 
 .bg-tertiary {
-  background-color: #bac1b8;
-}
+  background-color: tertiary
 
 .bg-secondary {
-  background-color: #0c7c59;
+  background-color: secondary
 }
 
 .bg-official {
-  background: #58a4b0;
+  background-color: primary
 }
 
 #home {
@@ -93,12 +99,12 @@ body {
 }
 
 .standard-border {
-  border: 1px solid #58a4b0;
+  border: 1px solid primary;
 }
 
 .fancy-input {
   background: rgba(0, 0, 0, 0.04);
-  border: 1px solid rgba(0, 0, 0, 0);
+  border: 1px solid black
   outline: none;
   height: 34px;
   width: 100%;
@@ -108,8 +114,8 @@ body {
 }
 
 .fancy-input:focus {
-  background: rgba(0, 0, 0, 0);
-  border: 1px solid #58a4b0;
+  background: black
+  border: 1px solid primary;
 }
 
 .btn-primary,
@@ -121,22 +127,22 @@ body {
   line-height: 36px;
   transition: all ease-in-out 300ms
   &:hover {
-    box-shadow: 2px 2px 14px 0 rgba(0, 0, 0, 0.3);
+    box-shadow: black
   }
  }
 
 .btn-primary {
   color: white;
-  background: #58a4b0;
+  background: primary;
 }
 
 .btn-secondary {
   background: white;
-  color: #58a4b0;
+  color: primary;
 }
 
 .box-shadow {
-  box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.3);
+  box-shadow: black
 }
 
 .m-t {
@@ -191,7 +197,7 @@ body {
 
 .info {
   padding: 8px 0;
-  color: #bac1b8;
+  color: tertiary
 }
 
 .border-btm {
@@ -199,9 +205,9 @@ body {
 }
 
 .text-accent {
-  color: #d64933;
+  color: accent
 }
 
 .text-black {
-  color: initial;
+  color: initial
 }
