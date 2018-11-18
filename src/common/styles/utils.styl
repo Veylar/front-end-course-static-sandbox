@@ -1,5 +1,3 @@
-@import "./constants.styl"
-
 .absolute-center {
   position absolute
   top 50%
@@ -27,16 +25,16 @@ body {
   font-family: "Didact Gothic", sans-serif;
 }
 
-.row{
+.row  {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.item-center{
+.item-center  {
   display: flex;
   justify-content: center
-  }
+}
 
 .text-title {
   font-family: "Gloria Hallelujah";
@@ -47,7 +45,7 @@ body {
 }
 
 .text-white {
-  color: white;
+  color: $white;
 }
 
 .section {
@@ -56,14 +54,15 @@ body {
 }
 
 .bg-tertiary {
-  background-color: tertiary
+  background-color: $tertiary;
+}
 
 .bg-secondary {
-  background-color: secondary
+  background-color: $secondary;
 }
 
 .bg-official {
-  background-color: primary
+  background-color: $primary;
 }
 
 #home {
@@ -99,12 +98,12 @@ body {
 }
 
 .standard-border {
-  border: 1px solid primary;
+  border: 1px solid $primary;
 }
 
 .fancy-input {
   background: rgba(0, 0, 0, 0.04);
-  border: 1px solid black
+  border: 1px solid $black
   outline: none;
   height: 34px;
   width: 100%;
@@ -115,7 +114,7 @@ body {
 
 .fancy-input:focus {
   background: black
-  border: 1px solid primary;
+  border: 1px solid $primary;
 }
 
 .btn-primary,
@@ -127,22 +126,21 @@ body {
   line-height: 36px;
   transition: all ease-in-out 300ms
   &:hover {
-    box-shadow: black
+    box-shadow: $black}
   }
- }
-
+ 
 .btn-primary {
-  color: white;
-  background: primary;
+  color: $white;
+  background: $primary;
 }
 
 .btn-secondary {
-  background: white;
-  color: primary;
+  background: $white;
+  color: $primary;
 }
 
 .box-shadow {
-  box-shadow: black
+  box-shadow: black;
 }
 
 .m-t {
@@ -197,17 +195,17 @@ body {
 
 .info {
   padding: 8px 0;
-  color: tertiary
+  color: $tertiary;
 }
 
 .border-btm {
-  border-bottom: 1px solid #58a4b0;
+  border-bottom: 1px solid $primary;
 }
 
 .text-accent {
-  color: accent
+  color: $accent;
 }
 
 .text-black {
-  color: initial
+  color: $black;
 }
