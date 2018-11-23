@@ -15,11 +15,12 @@ let clicksleft = 20
 clickBtn.onclick = function() {
   if (clicks < maxValue) {
     clicks = clicks + step
+    clicksleft = maxValue - clicks
   } else {
     clicks = 'max value reached'
+    clicksleft = 'no clicks left :('
   }
-clicksleft = maxValue - clicks
- 
+
 clicksleftnumber.innerHTML = clicksleft
 clickValue.innerHTML = clicks
 }
@@ -31,9 +32,10 @@ clickStepBtn.onclick = function() {
 
 clickMaxBtn.onclick = function() {
   maxValue = maxValue + 1
-  clicksleft = maxValue - clicks
-  clicksleftnumber.innerHTML = clicksleft
   clickMax.innerHTML = maxValue
+
+  clicksleft = maxValue - clicks
+clicksleftnumber.innerHTML = clicksleft
 }
 
 clickReset.onclick = function() {
