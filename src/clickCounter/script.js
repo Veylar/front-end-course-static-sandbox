@@ -13,7 +13,7 @@ let step = 1
 let clicksleft = 20
 
 clickBtn.onclick = function() {
-  if (clicks < maxValue) {
+  if (clicks < maxValue-step) {
     clicks = clicks + step
     clicksleft = maxValue - clicks
   } else {
