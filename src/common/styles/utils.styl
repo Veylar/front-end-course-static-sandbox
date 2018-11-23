@@ -81,7 +81,7 @@ body {
 
 .card {
   padding: 2rem;
-  background: white;
+  background: $white;
   border-radius: 8px;
 }
 
@@ -102,7 +102,7 @@ body {
 }
 
 .fancy-input {
-  background: rgba(0, 0, 0, 0.04);
+  background: $black
   border: 1px solid $black
   outline: none;
   height: 34px;
@@ -113,7 +113,7 @@ body {
 }
 
 .fancy-input:focus {
-  background: black
+  background: $black
   border: 1px solid $primary;
 }
 
@@ -121,30 +121,24 @@ body {
 .btn-secondary {
   cursor: pointer;
   border: none;
-  width: 100px;
   height: 36px;
   line-height: 36px;
   transition: all ease-in-out 300ms;
+  color: $white;
+  background: $primary;
   border-radius: 5%
+  box-shadow: 2px 2px 4px rgb(115, 111, 111)
   &:hover {
-    box-shadow: 1px 1px 2px $black;
+    box-shadow: 3px 3px 6px $secondary;
   }
 }
 
 .btn-primary {
-  color: $white;
-  background: $primary;
+  width: 100px;
 }
 
 .btn-secondary {
-  background: $white;
-  color: $primary;
-}
-
-.btn-primary,
-.btn-secondary,
-.box-shadow {
-  box-shadow: 2px 2px 4px $black
+  width: 120px;
 }
 
 .m-t {

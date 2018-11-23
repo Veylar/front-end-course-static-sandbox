@@ -16,13 +16,18 @@
 
     <div class="card card-narrow standard-border m-t">
       <div class="info">
-        <div class="text-black">Click counter</div>
-        <div class="m-t">
-          <span class="info-key">clicks:</span><span id="click-value" class="text-accent m-l-sm">0</span>
+        <div class="text-black">Clicks</div>
+        <div class="m-t info border-btm">
+          <div>Max Value:<span id="max-value" class="text-accent m-l-sm">20</span></div>
+          <div class="m-t">clicks:<span id="click-value" class="text-accent m-l-sm">0</span></div>
+          <div class="m-t">clicks left:<span id="clicks-left" class="text-accent m-l-sm">20</span></div>
+          <div class="m-t">step:<span id="click-step" class="text-accent m-l-sm">1</span></div>
         </div>
       </div>
       <button id="click-btn" class="btn-primary m-t">Click</button>
       <button id="click-reset" class="btn-primary m-t">Reset</button>
+      <button id="click-step-btn" class="btn-secondary m-t">Increase Step</button>
+      <button id="click-max-btn" class="btn-secondary m-t">Increase Max</button>
     </div>
 
   </body>
