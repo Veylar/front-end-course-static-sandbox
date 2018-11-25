@@ -31,10 +31,15 @@ clickStepBtn.onclick = function() {
 }
 
 clickMaxBtn.onclick = function() {
-  maxValue = maxValue + 1
-  clickMax.innerHTML = maxValue
+  if (clicks != 'max value reached') {
+    maxValue = maxValue + 1
+    clicksleft = maxValue - clicks
+  } else {
+    maxValue = "you've reached Max Value! Please, leave a message or reset"
+    clicksleft = 'no clicks left :('
+  }
 
-  clicksleft = maxValue - clicks
+clickMax.innerHTML = maxValue
 clicksleftnumber.innerHTML = clicksleft
 }
 
