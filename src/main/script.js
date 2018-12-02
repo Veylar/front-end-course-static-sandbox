@@ -65,10 +65,10 @@ goal: 'cookies!'}
 
 
 ponies.forEach(function(item) {
-    function Monster () {
+    function Monster (pony) {
         return pony.sane === 'insane' && pony.magic === 'wild' && pony.goal !== 'friendship'
     }
-    console.log (pony)
+    console.log (Monster)
 
     const pony_card = document.createElement('div')
     const image = document.createElement('img')
