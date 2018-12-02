@@ -63,42 +63,31 @@ magic: 'none',
 goal: 'cookies!'}
 ]
 
-
 ponies.forEach(function(item) {
-    function Monster (pony) {
-        return pony.sane === 'insane' && pony.magic === 'wild' && pony.goal !== 'friendship'
+    function isMonster() {
+        return item.sane === 'insane' && item.magic === 'wild' && item.goal !== 'friendship'
     }
-    console.log (Monster)
-
+    let pony_check = isMonster(item)
+   
     const pony_card = document.createElement('div')
+    const pony_text = document.createElement('div')
     const image = document.createElement('img')
     image.src = item.image
 
+    pony_text.classList.add('text-center')
+    pony_card.classList.add('card', 'standard-border', 'm-t', 'bg-white')
     image.classList.add('text-center', 'avatar')
-    pony_card.classList.add('card', 'standard-border', 'm-t', 'row')
+
+    {if (pony_check == true) {
+            pony_card.classList.remove('bg-white')
+            pony_card.classList.add('bg-danger')
+        }
+        }
 
     pony_card.innerHTML = item.name
     image.innerHTML = item.image
     
     pony_card.append(image)
+    pony_card.append(pony_text)
     container.append(pony_card)
 })
-
-// function Monster (pony) {
-//     return pony.sane === 'insane' && pony.magic === 'wild' && pony.goal !== 'friendship'
-// }
-
-const pony_test = Monster ('pony')
-console.log (pony_test)
-
-
-
-// function greet(name) {
-//     return 'Hello, ' + name + '!'
-// }
-
-// function canDrink(age) {
-//     return age >= 18
-// }
-
-// const greeting = greet('Dima')
