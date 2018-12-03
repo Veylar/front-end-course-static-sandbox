@@ -4,6 +4,7 @@ const insane = 'insane'
 const calm = 'calm'
 const wild = 'wild'
 const friendship = 'friendship'
+const unknown = 'unknown'
 const ponies = [
 	{
 		name: 'Twilight Sparkle',
@@ -56,9 +57,9 @@ const ponies = [
 		name: 'Princess Celestia',
 		image:
       'https://vignette.wikia.nocookie.net/loveinterest/images/c/cc/Princess_celestia.png/revision/latest?cb=20150302154625',
-		sane: 'unknown',
-		magic: 'unknown',
-		goal: 'unknown',
+		sane: unknown,
+		magic: unknown,
+		goal: unknown,
 	},
 	{
 		name: 'Princess Luna',
@@ -108,6 +109,12 @@ function isDangerous(item) {
 function isSafe(item) {
 	return item.sane === sane && item.goal === friendship && (item.magic === calm || !item.magic)
 }
+function isHungry(item) {
+	return item.goal === 'cookies!' || item.goal === 'food'
+}
+function isUnknown(item) {
+	return item.sane === unknown || item.magic === unknown || item.goal === unknown
+}
 
 ponies.forEach(function(item) {
 	const ponyCard = document.createElement('div')
@@ -116,15 +123,17 @@ ponies.forEach(function(item) {
 	image.src = item.image
 
 	ponyText.classList.add('text-center', 'm-b')
-	ponyCard.classList.add('card', 'standard-border', 'm-t', 'bg-white')
+	ponyCard.classList.add('card', 'standard-border', 'm-t', 'text-title', 'text-white')
 	image.classList.add('text-center', 'avatar')
 
 	if (isDangerous(item)) {
-		ponyCard.classList.remove('bg-white')
 		ponyCard.classList.add('bg-danger')
 	} else if (isSafe(item)) {
-		ponyCard.classList.remove('bg-white')
 		ponyCard.classList.add('bg-safe')
+	} else if (isUnknown(item)) {
+		ponyCard.classList.add('bg-warning')
+	} else {
+		ponyCard.classList.add('bg-concern')
 	}
 
 	ponyText.innerHTML = item.name
