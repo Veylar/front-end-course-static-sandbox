@@ -1,11 +1,9 @@
-const message = document.getElementById('message')
 const container = document.getElementById('container')
 const sane = 'sane'
 const insane = 'insane'
 const calm = 'calm'
 const wild = 'wild'
 const friendship = 'friendship'
-const none = 'none'
 const ponies = [
 	{
 		name: 'Twilight Sparkle',
@@ -28,7 +26,7 @@ const ponies = [
 		image:
       'https://vignette.wikia.nocookie.net/mlpfimroleplay/images/2/22/Rarity2.png/revision/latest?cb=20161221214903',
 		sane: insane,
-		magic: none,
+		magic: null,
 		goal: 'beauty',
 	},
 	{
@@ -43,7 +41,7 @@ const ponies = [
 		name: 'Rainbow Dash',
 		image: 'https://i.pinimg.com/originals/1f/f7/74/1ff774556152193ceee3bf5f0a9a16bf.png',
 		sane: sane,
-		magic: none,
+		magic: null,
 		goal: 'victory',
 	},
 	{
@@ -51,7 +49,7 @@ const ponies = [
 		image:
       'https://vignette.wikia.nocookie.net/international-entertainment-project/images/2/2c/Applejack_%28My_Little_Pony_Friendship_Is_Magic%29.png/revision/latest?cb=20160110163205',
 		sane: sane,
-		magic: none,
+		magic: null,
 		goal: friendship,
 	},
 	{
@@ -82,7 +80,7 @@ const ponies = [
 		image:
       'https://vignette.wikia.nocookie.net/mlp/images/0/08/Castle_Creator_Apple_Bloom.png/revision/latest?cb=20120205140653',
 		sane: sane,
-		magic: none,
+		magic: null,
 		goal: 'cookies!',
 	},
 	{
@@ -108,15 +106,10 @@ function isDangerous(item) {
 }
 
 function isSafe(item) {
-	return (
-		item.sane === sane && item.goal === friendship && (item.magic === calm || item.magic === none)
-	)
+	return item.sane === sane && item.goal === friendship && (item.magic === calm || !item.magic)
 }
 
 ponies.forEach(function(item) {
-	const ponyDangerCheck = isDangerous(item)
-	const ponySafeCheck = isSafe(item)
-	console.log(ponySafeCheck)
 	const ponyCard = document.createElement('div')
 	const ponyText = document.createElement('div')
 	const image = document.createElement('img')
@@ -126,14 +119,12 @@ ponies.forEach(function(item) {
 	ponyCard.classList.add('card', 'standard-border', 'm-t', 'bg-white')
 	image.classList.add('text-center', 'avatar')
 
-	{
-		if (ponyDangerCheck == true) {
-			ponyCard.classList.remove('bg-white')
-			ponyCard.classList.add('bg-danger')
-		} else if (ponySafeCheck == true) {
-			ponyCard.classList.remove('bg-white')
-			ponyCard.classList.add('bg-safe')
-		}
+	if (isDangerous(item)) {
+		ponyCard.classList.remove('bg-white')
+		ponyCard.classList.add('bg-danger')
+	} else if (isSafe(item)) {
+		ponyCard.classList.remove('bg-white')
+		ponyCard.classList.add('bg-safe')
 	}
 
 	ponyText.innerHTML = item.name
