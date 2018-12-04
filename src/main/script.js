@@ -5,6 +5,8 @@ const calm = 'calm'
 const wild = 'wild'
 const friendship = 'friendship'
 const unknown = 'unknown'
+const cookiepicture =
+  'https://cdn.shopify.com/s/files/1/1540/1281/products/front-chocolate-chip_95ab4437-8680-46e9-b633-12951d787002_345x345@2x.png?v=1530819024'
 const ponies = [
 	{
 		name: 'Twilight Sparkle',
@@ -121,10 +123,13 @@ ponies.forEach(function(item) {
 	const ponyText = document.createElement('div')
 	const image = document.createElement('img')
 	image.src = item.image
+	const cookie = document.createElement('img')
+	cookie.src = cookiepicture
 
 	ponyText.classList.add('text-center', 'm-b')
 	ponyCard.classList.add('card', 'standard-border', 'm-t', 'text-title', 'text-white')
 	image.classList.add('text-center', 'avatar')
+	cookie.classList.add('avatar-small')
 
 	if (isDangerous(item)) {
 		ponyCard.classList.add('bg-danger')
@@ -142,4 +147,8 @@ ponies.forEach(function(item) {
 	ponyCard.append(ponyText)
 	ponyCard.append(image)
 	container.append(ponyCard)
+
+	if (isHungry(item)) {
+		ponyText.append(cookie)
+	}
 })
