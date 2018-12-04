@@ -123,13 +123,10 @@ ponies.forEach(function(item) {
 	const ponyText = document.createElement('div')
 	const image = document.createElement('img')
 	image.src = item.image
-	const cookie = document.createElement('img')
-	cookie.src = cookiepicture
 
 	ponyText.classList.add('text-center', 'm-b')
 	ponyCard.classList.add('card', 'standard-border', 'm-t', 'text-title', 'text-white')
 	image.classList.add('text-center', 'avatar')
-	cookie.classList.add('avatar-small')
 
 	if (isDangerous(item)) {
 		ponyCard.classList.add('bg-danger')
@@ -149,6 +146,9 @@ ponies.forEach(function(item) {
 	container.append(ponyCard)
 
 	if (isHungry(item)) {
+		const cookie = document.createElement('img')
+		cookie.src = cookiepicture
+		cookie.classList.add('avatar-small')
 		ponyText.append(cookie)
 	}
 })
